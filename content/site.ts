@@ -26,6 +26,19 @@ export type IconKey =
   | 'shield'
   | 'bolt'
   | 'chart'
+  | 'monitor'
+  | 'users'
+  | 'clock'
+  | 'mail'
+  | 'lock'
+  | 'message'
+  | 'ticket'
+  | 'target'
+  | 'settings'
+  | 'building'
+  | 'checkcircle'
+
+export type Trust = { icon: IconKey; label: string }
 
 // ---------------------------------------------------------------------------- brand
 
@@ -70,7 +83,7 @@ export const primaryAction = {
 }
 
 /** Small print that belongs next to every primary button. Leave empty to hide. */
-export const actionNote = 'Early access. We reply by email.'
+export const actionNote = ''
 
 // ------------------------------------------------------------------------------ nav
 
@@ -90,59 +103,65 @@ export const nav = {
 // ----------------------------------------------------------------------------- hero
 
 export const hero = {
+  eyebrow: 'Remote IT support, simplified',
   headlineA: 'Fix the PC.',
   headlineB: 'Keep the Conversation.',
-  sub: "rclick.io remotes to the user's machine, runs the diagnostics, and reports back while you talk to your client.",
+  sub: "rclick.io remotes to the user's machine, runs diagnostics, and reports back while you talk to your client.",
   primaryCta: primaryAction.label,
   secondaryCta: 'See how it works',
   secondaryHref: '/features',
-  /** Background photo. 1600px wide or more, landscape, quiet enough for text on the left. */
+  /**
+   * Background photo. 1600px wide or more, landscape, quiet on the left half. Ideally it
+   * already shows the app on a laptop screen; then set `window` to null below.
+   */
   image: { src: '/img/hero.png', alt: '' },
-  /** The product window shown on the right. 1180×760 keeps the ratio the layout expects. */
+  /** The product window floated over the photo. Set to null once the photo shows the app. */
   window: {
     src: '/img/shot-one.png',
     alt: 'The rclick.io session screen showing a connected PC and a running diagnostic.',
     width: 1180,
     height: 760,
-  },
+  } as null | { src: string; alt: string; width: number; height: number },
   /** Four short trust points. Icons must exist in components/Icons.tsx. */
   trust: [
-    { icon: 'bolt', label: 'Remote in fast' },
-    { icon: 'loop', label: 'Runs the checks' },
+    { icon: 'bolt', label: 'Remote to any PC' },
+    { icon: 'loop', label: 'Run the checks' },
     { icon: 'shield', label: 'Security sweep' },
-    { icon: 'file', label: 'Plain report' },
-  ] as { icon: IconKey; label: string }[],
+    { icon: 'file', label: 'Plain-English report' },
+  ] as Trust[],
 }
 
 // ------------------------------------------------------------------------- features
 
 export const features = {
   eyebrow: 'Features',
-  heading: 'The first hour of every ticket, done for you.',
-  lede: 'rclick.io connects to a Windows PC, works through the standard diagnostic checks, and runs a security sweep. You get a report you can read out loud to the client.',
+  heading: 'Everything you need for a smoother session.',
+  lede: 'rclick.io connects, checks, reports. Nothing is listed that the current build does not do.',
   /** Six reads best. Three or nine also fill the grid. */
   items: [
-    { icon: 'bolt', title: 'Remote to any user PC', text: 'Open a session to the machine from your own. No walking the user through settings menus.' },
-    { icon: 'loop', title: 'Automated diagnostics', text: 'Runs the checks you would run by hand: disk, memory, startup, drivers, network, event log.' },
-    { icon: 'shield', title: 'Security sweep', text: 'Looks for missing patches, unknown startup items, weak local settings, and known bad software.' },
+    { icon: 'monitor', title: 'Remote to any user PC', text: "Start a session from your own machine and connect to the user's Windows PC in seconds." },
+    { icon: 'settings', title: 'Automated diagnostics', text: 'Runs the standard checks on disk, memory, startup, drivers, network and more.' },
+    { icon: 'shield', title: 'Security sweep', text: 'Finds missing patches, unknown startup items, weak local settings, and known bad software.' },
     { icon: 'pencil', title: 'Ask it in plain English', text: 'Type what the user told you. The assistant picks the checks and explains what it found.' },
-    { icon: 'file', title: 'A report you can hand over', text: 'Every session ends with a short written summary. What was checked, what was found, what was fixed.' },
-    { icon: 'calendar', title: 'Fewer return visits', text: 'Catch the second and third problem in the same session, before you are back in the car.' },
+    { icon: 'file', title: 'A report you can hand over', text: 'Every session ends with a clear summary of what was checked, what was found, and what changed.' },
+    { icon: 'users', title: 'Fewer return visits', text: 'Catch the real issues and fix them in the same session, before your client has to call again.' },
   ] as IconItem[],
 }
 
 // ------------------------------------------------------------------------- benefits
 
 export const benefits = {
-  eyebrow: 'Benefits',
+  eyebrow: 'Why rclick.io',
   heading: 'Spend the visit with the client, not the progress bar.',
-  lede: 'For IT technicians, help desks, and small MSPs. rclick.io takes the waiting and the repetitive checks so you can do the part that needs a person.',
+  lede: 'For IT technicians, help desks, and small MSPs. rclick.io takes the waiting and the repeatable checks so you can do the part that needs a person.',
   items: [
-    { title: 'More time talking, less time clicking', text: 'The assistant runs the checks in the background while you find out what the client actually needs.' },
-    { title: 'Same checklist every time', text: 'Nothing gets skipped because it was late on a Friday. The diagnostic runs the full list, every session.' },
-    { title: 'Faster tickets', text: 'The routine part of a ticket is handled while you work the hard part. One session covers more ground.' },
-    { title: 'Something to show for it', text: 'The client gets a written report of what was done. You get a record for the next visit.' },
+    { title: 'More time talking, less time clicking', text: 'The assistant runs the checks while you find out what the client actually needs.' },
+    { title: 'Same checklist every time', text: 'Nothing gets skipped because it was late on a Friday.' },
+    { title: 'Faster tickets', text: 'The routine part is handled while you work the hard part.' },
+    { title: 'Something to show for it', text: 'The client gets a written report. You get a record for the next visit.' },
   ] as Item[],
+  /** Photo on the right. 1180x760. Quiet, on-brand, no UI in it. */
+  image: { src: '/img/benefits.png', alt: 'An office chair and desk with a monitor, the workspace of an IT technician.' },
 
   /**
    * The stat card. Every number here must be something the product really produces.
@@ -158,24 +177,54 @@ export const benefits = {
 // ---------------------------------------------------------------------- screenshots
 
 export const screenshots = {
-  eyebrow: 'Screenshots',
+  eyebrow: 'Product screenshots',
   heading: 'Four screens. Nothing to learn.',
+  lede: 'The same simple flow every time. Click a tab to see each screen.',
   /** Real, unretouched captures at 1180×760. Invent any names that appear in them. */
   shots: [
-    { key: 'one', title: 'Session', src: '/img/shot-one.png', body: 'The connected PC, the checks in progress, and the assistant chat on one screen.' },
-    { key: 'two', title: 'Diagnostics', src: '/img/shot-two.png', body: 'Each check with its result. Open one to see what was tested and what it means.' },
-    { key: 'three', title: 'Security', src: '/img/shot-three.png', body: 'Patches, startup items, and settings flagged for review, in order of risk.' },
-    { key: 'four', title: 'Report', src: '/img/shot-four.png', body: 'The written summary you send to the client when the session ends.' },
+    {
+      key: 'one',
+      title: 'Session',
+      src: '/img/shot-one.png',
+      body: 'The connected PC, the checks in progress, and the assistant chat on one screen.',
+      bullets: ['See what the user sees', 'Run checks in real time', 'Talk to the assistant while it works', 'Move to the next step when ready'],
+    },
+    {
+      key: 'two',
+      title: 'Diagnostics',
+      src: '/img/shot-two.png',
+      body: 'Each check with its result. Open one to see what was tested and what it means.',
+      bullets: ['Disk, memory, startup, drivers, network, event log', 'One-line result per check', 'Details a click away', 'Run again any time'],
+    },
+    {
+      key: 'three',
+      title: 'Security',
+      src: '/img/shot-three.png',
+      body: 'Patches, startup items, and settings flagged for review, in order of risk.',
+      bullets: ['Sorted by risk', 'Flags first, fixes when you say so', 'Known bad software called out', 'Not a replacement for antivirus'],
+    },
+    {
+      key: 'four',
+      title: 'Report',
+      src: '/img/shot-four.png',
+      body: 'The written summary you send to the client when the session ends.',
+      bullets: ['What was checked', 'What was found', 'What was changed', 'Save or send as you like'],
+    },
   ],
   note: 'Screens are design mockups of the app. The shipping build may differ.',
 }
 
 // -------------------------------------------------------------------------- cta band
 
-/** Kept for the closing band on inner pages. The homepage download band was removed. */
 export const cta = {
-  heading: 'Want to try it on a real ticket?',
+  eyebrow: 'Ready to try it?',
+  heading: 'Get started on your next ticket.',
+  text: 'One real session tells you more than this page can. Get in touch and we will set you up.',
   button: primaryAction.label,
+  href: primaryAction.href,
+  secondary: { label: 'Read the FAQ', href: '/#faq' },
+  /** Handwritten aside. Line break with \n. Empty string hides it. */
+  note: 'Same checks.\nFewer callbacks.',
 }
 
 // ------------------------------------------------------------------------------ faq
@@ -192,11 +241,11 @@ export const faq = {
     { title: 'Early access', text: 'rclick.io is not yet open for public download. Get in touch and we will set you up when a build is ready for you.' },
   ] as Item[],
   items: [
-    { id: 'privacy', title: "What does it do on the user's PC?", text: 'It opens a remote session, runs diagnostic and security checks, and writes a report. It only acts on the machine you connect it to, during the session you start.' },
+    { id: 'privacy', title: "What does rclick.io do on the user's PC?", text: 'It opens a remote session, runs diagnostic and security checks, and writes a report. It only acts on the machine you connect it to, during the session you start.' },
     { id: 'price', title: 'What does it cost?', text: 'Pricing is not set yet. There is a free tier planned. Team and Business plans are priced on request while we are in early access.' },
     { id: 'data', title: 'Can I get my reports out?', text: 'Yes. Each session report is yours to save and send. Ask us to remove anything we hold and we will.' },
     { id: 'os', title: 'What does it run on?', text: 'It connects to Windows 10 and 11 PCs. Other platforms are not supported today.' },
-    { id: 'support', title: 'Who do I talk to when it breaks?', text: 'Email us. A person reads the inbox and replies within a working day.' },
+    { id: 'support', title: "Who do I talk to when I'm stuck?", text: 'Email us. A person reads the inbox and replies within a working day.' },
   ],
   contact: {
     title: 'Still stuck?',

@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 import { Nav } from '@/components/Nav'
-import { Icon } from '@/components/Icons'
+import { Icon, MailIcon } from '@/components/Icons'
 import { Footer } from '@/components/sections/Footer'
+import { SectionHeader } from '@/components/sections/SectionHeader'
 import { PageHero } from '@/components/pages/PageHero'
 import { ContactForm } from '@/components/pages/ContactForm'
+import { ClosingCta } from '@/components/pages/ClosingCta'
+import { brand, primaryAction } from '@/content/site'
 import { contactPage } from '@/content/pages'
 
 export const metadata: Metadata = {
@@ -12,7 +15,8 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
-  const methods = contactPage.methods.filter((m) => m.value)
+  const { aside, quick } = contactPage
+  const mailto = `mailto:${brand.contactEmail}`
 
   return (
     <>
@@ -21,51 +25,84 @@ export default function ContactPage() {
         <PageHero hero={contactPage.hero} />
 
         <section className="lp-section bg-white max-[768px]:px-5 max-[768px]:py-16">
-          <div className="lp-rail grid grid-cols-[minmax(0,5fr)_minmax(0,7fr)] items-start gap-[64px] max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
-            <div>
-              <ul className="flex flex-col gap-4">
-                {methods.map((m) => (
-                  <li key={m.label}>
-                    <a
-                      href={m.href}
-                      className="lp-card flex items-center gap-4 rounded-[12px] px-5 py-4 transition-[border-color,background-color] duration-140 hover:border-accent-border hover:bg-surface-hover"
-                    >
-                      <span className="grid h-10 w-10 flex-none place-items-center rounded-[10px] bg-accent-tint text-accent">
-                        <Icon name={m.icon} size={19} />
-                      </span>
-                      <span>
-                        <span className="block text-[13px] text-ink-meta">{m.label}</span>
-                        <span className="block text-[15.5px] font-semibold text-ink">{m.value}</span>
-                      </span>
-                    </a>
+          <div className="lp-rail grid grid-cols-[minmax(0,5fr)_minmax(0,7fr)] items-start gap-8 max-[1024px]:grid-cols-1">
+            <div className="rounded-[20px] border border-border bg-surface-warm p-[34px] max-[768px]:p-6">
+              <h2 className="text-[30px] leading-[1.12] font-semibold tracking-[-0.028em]">{aside.heading}</h2>
+              <p className="mt-3 text-[15.5px] leading-[1.6] text-ink-muted text-pretty">{aside.text}</p>
+
+              <a
+                href={mailto}
+                className="mt-6 flex items-center gap-4 rounded-[14px] border border-accent-border bg-white px-5 py-4 transition-colors duration-140 hover:border-accent"
+              >
+                <span className="lp-tile h-11 w-11">
+                  <MailIcon size={21} />
+                </span>
+                <span>
+                  <span className="block text-[13px] text-ink-meta">{aside.emailLabel}</span>
+                  <span className="block text-[17px] font-semibold text-ink">{brand.contactEmail}</span>
+                </span>
+              </a>
+
+              <ul className="mt-6 flex flex-col gap-5">
+                {aside.facts.map((f) => (
+                  <li key={f.title} className="flex items-center gap-4">
+                    <span className="lp-tile h-11 w-11 bg-white">
+                      <Icon name={f.icon} size={20} />
+                    </span>
+                    <span>
+                      <span className="block text-[15px] font-semibold">{f.title}</span>
+                      <span className="block text-[13.5px] text-ink-muted">{f.text}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
 
-              {contactPage.offices.length > 0 && (
-                <div className="mt-10">
-                  <h2 className="text-[13px] font-semibold tracking-[0.06em] text-ink-meta uppercase">
-                    {contactPage.offices.length === 1 ? 'Office' : 'Offices'}
-                  </h2>
-                  <ul className="mt-4 grid grid-cols-2 gap-6 max-[640px]:grid-cols-1">
-                    {contactPage.offices.map((o) => (
-                      <li key={o.city}>
-                        <div className="text-[15.5px] font-semibold">{o.city}</div>
-                        <address className="mt-1 text-[14.5px] leading-[1.55] text-ink-muted not-italic">
-                          {o.lines.map((l) => (
-                            <div key={l}>{l}</div>
-                          ))}
-                        </address>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              <div className="mt-6 flex gap-4 rounded-[14px] bg-accent-tint px-5 py-4">
+                <span className="lp-tile h-11 w-11 bg-white">
+                  <Icon name={aside.tip.icon} size={20} />
+                </span>
+                <span>
+                  <span className="block text-[15px] font-semibold text-accent-deep">{aside.tip.title}</span>
+                  <span className="mt-1 block text-[13.5px] leading-[1.5] text-cta-body">{aside.tip.text}</span>
+                </span>
+              </div>
             </div>
 
             <ContactForm />
           </div>
         </section>
+
+        <section aria-labelledby="quick-heading" className="lp-section border-t border-border-section bg-surface-warm max-[768px]:px-5 max-[768px]:py-16">
+          <div className="lp-rail">
+            <SectionHeader id="quick-heading" eyebrow={quick.eyebrow} heading={quick.heading} lede={quick.lede} />
+            <ul className="mt-10 grid grid-cols-2 gap-5 max-[768px]:grid-cols-1">
+              {quick.items.map((q) => (
+                <li key={q.title} className="lp-card flex gap-5 rounded-[16px] p-6">
+                  <span className="lp-tile h-12 w-12">
+                    <Icon name={q.icon} size={22} />
+                  </span>
+                  <div>
+                    <h3 className="text-[16.5px] font-semibold tracking-[-0.012em]">{q.title}</h3>
+                    <p className="mt-2 text-[14.5px] leading-[1.6] text-ink-muted text-pretty">{q.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <ClosingCta
+          content={{
+            eyebrow: contactPage.closing.eyebrow,
+            heading: contactPage.closing.heading,
+            text: contactPage.closing.text,
+            button: primaryAction.label,
+            href: mailto,
+            secondary: null,
+            note: contactPage.closing.note,
+          }}
+          className="border-t border-border-section"
+        />
       </main>
       <Footer />
     </>

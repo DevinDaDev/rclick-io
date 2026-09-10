@@ -14,6 +14,7 @@ export function ScreenshotsSection() {
           id="screenshots-heading"
           eyebrow={screenshots.eyebrow}
           heading={screenshots.heading}
+          lede={screenshots.lede}
         />
         <Screenshots />
       </div>

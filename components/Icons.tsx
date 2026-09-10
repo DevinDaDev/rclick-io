@@ -136,7 +136,108 @@ export function ChartIcon(props: IconProps) {
   )
 }
 
-export const ICONS = {
+export function MonitorIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <rect x="3" y="4.5" width="18" height="12" rx="2" />
+      <path d="M8 20h8M12 16.5V20" />
+    </Svg>
+  )
+}
+
+export function UsersIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <circle cx="9" cy="8" r="3.2" />
+      <path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" />
+      <path d="M15.5 5.2a3.2 3.2 0 0 1 0 5.6M17 14.2c2.1.5 3.5 2.2 3.5 4.8" />
+    </Svg>
+  )
+}
+
+export function ClockIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 7.5V12l3 2" />
+    </Svg>
+  )
+}
+
+export function MailIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <rect x="3" y="5.5" width="18" height="13" rx="2" />
+      <path d="M3.5 7l8.5 6 8.5-6" />
+    </Svg>
+  )
+}
+
+export function LockIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <rect x="5" y="10.5" width="14" height="10" rx="2" />
+      <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
+    </Svg>
+  )
+}
+
+export function MessageIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 3.5V16H6.5A2.5 2.5 0 0 1 4 13.5z" />
+      <path d="M8 9h8M8 12.5h5" />
+    </Svg>
+  )
+}
+
+export function TicketIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h13A1.5 1.5 0 0 1 20 8.5v1.6a2 2 0 0 0 0 3.8v1.6a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 15.5v-1.6a2 2 0 0 0 0-3.8z" />
+      <path d="M13.5 8v8" strokeDasharray="2 2" />
+    </Svg>
+  )
+}
+
+export function TargetIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <circle cx="12" cy="12" r="8.5" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="12" cy="12" r="1" fill="currentColor" />
+    </Svg>
+  )
+}
+
+export function SettingsIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 3.5v2M12 18.5v2M3.5 12h2M18.5 12h2M6 6l1.4 1.4M16.6 16.6L18 18M6 18l1.4-1.4M16.6 7.4L18 6" />
+    </Svg>
+  )
+}
+
+export function BuildingIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <rect x="4.5" y="3.5" width="15" height="17" rx="1.5" />
+      <path d="M8.5 7.5h2M13.5 7.5h2M8.5 11.5h2M13.5 11.5h2M10 20.5v-4h4v4" />
+    </Svg>
+  )
+}
+
+export function CheckCircleIcon(props: IconProps) {
+  return (
+    <Svg {...props} linecap="round" linejoin="round">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M8.5 12.5l2.3 2.3L15.5 10" />
+    </Svg>
+  )
+}
+
+const ICONS = {
   file: FileIcon,
   folder: FolderIcon,
   pencil: PencilIcon,
@@ -147,6 +248,17 @@ export const ICONS = {
   shield: ShieldIcon,
   bolt: BoltIcon,
   chart: ChartIcon,
+  monitor: MonitorIcon,
+  users: UsersIcon,
+  clock: ClockIcon,
+  mail: MailIcon,
+  lock: LockIcon,
+  message: MessageIcon,
+  ticket: TicketIcon,
+  target: TargetIcon,
+  settings: SettingsIcon,
+  building: BuildingIcon,
+  checkcircle: CheckCircleIcon,
 } as const
 
 export type IconName = keyof typeof ICONS
@@ -241,6 +353,24 @@ export function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
       focusable="false"
     >
       <path d={direction === 'left' ? 'M14.5 6l-6 6 6 6' : 'M9.5 6l6 6-6 6'} />
+    </svg>
+  )
+}
+
+/** Small arrow for primary buttons. */
+export function ArrowRight({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      <path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5" />
+    </svg>
+  )
+}
+
+/** Chevron pointing down, for FAQ cards. Rotates via the parent's group-open. */
+export function ChevronDown({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      <path d="M6 9.5l6 6 6-6" />
     </svg>
   )
 }

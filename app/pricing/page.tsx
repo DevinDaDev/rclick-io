@@ -6,7 +6,7 @@ import { PageHero } from '@/components/pages/PageHero'
 import { PricingTiers } from '@/components/pages/PricingTiers'
 import { FaqList } from '@/components/pages/FaqList'
 import { ClosingCta } from '@/components/pages/ClosingCta'
-import { pricingPage } from '@/content/pages'
+import { closing, pricingPage } from '@/content/pages'
 
 export const metadata: Metadata = {
   title: pricingPage.title,
@@ -25,9 +25,10 @@ export default function PricingPage() {
           id="pricing-faq"
           eyebrow={pricingPage.faq.eyebrow}
           heading={pricingPage.faq.heading}
+          note={pricingPage.faq.note}
           items={pricingPage.faq.items}
         />
-        <ClosingCta />
+        <ClosingCta content={{ ...closing, icon: 'ticket' }} />
       </main>
       <Footer />
     </>

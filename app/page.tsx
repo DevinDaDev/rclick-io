@@ -6,6 +6,8 @@ import { Benefits } from '@/components/sections/Benefits'
 import { ScreenshotsSection } from '@/components/sections/ScreenshotsSection'
 import { Faq } from '@/components/sections/Faq'
 import { Footer } from '@/components/sections/Footer'
+import { ClosingCta } from '@/components/pages/ClosingCta'
+import { cta } from '@/content/site'
 
 /**
  * The page is a stack of independent sections. To remove one, delete its line here and
@@ -23,6 +25,7 @@ export default function Home() {
         <Benefits />
         <ScreenshotsSection />
         <Faq />
+        <ClosingCta content={cta} />
       </main>
 
       <Footer />

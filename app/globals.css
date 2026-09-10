@@ -17,28 +17,28 @@
 @theme {
   /* Surfaces */
   --color-surface: #ffffff;
-  --color-surface-warm: #fbfaf7;
-  --color-surface-inset: #fcfcfa;
-  --color-surface-hover: #fcfdfc;
+  --color-surface-warm: #f5f7fb;
+  --color-surface-inset: #f9fafc;
+  --color-surface-hover: #f9fafd;
 
   /* Borders - four distinct greys, one or two characters apart. Do not merge them. */
-  --color-border: #eceae3;
-  --color-border-section: #ecebe4;
-  --color-border-control: #e2e0d8;
-  --color-border-tile: #e6e4dc;
-  --color-border-subtle: #f0eee7;
-  --color-border-faint: #f4f2ec;
-  --color-window-border: #dcdbd4;
+  --color-border: #e4e8ef;
+  --color-border-section: #e6eaf0;
+  --color-border-control: #d9dfe8;
+  --color-border-tile: #dfe4ec;
+  --color-border-subtle: #eceff5;
+  --color-border-faint: #f1f3f8;
+  --color-window-border: #d3d9e3;
 
   /* Text. The four quiet greys all clear 4.5:1 on the warm surface. */
-  --color-ink: #191a17;
-  --color-ink-body: #3d3e38;
-  --color-ink-secondary: #4b4c46;
-  --color-ink-muted: #5d5e57;
-  --color-ink-meta: #676760;
-  --color-ink-meta-2: #6c6d66;
-  --color-ink-faint: #71716a;
-  --color-ink-faint-2: #72736a;
+  --color-ink: #132038;
+  --color-ink-body: #3a4658;
+  --color-ink-secondary: #475467;
+  --color-ink-muted: #5b6577;
+  --color-ink-meta: #667085;
+  --color-ink-meta-2: #6b7385;
+  --color-ink-faint: #707a8c;
+  --color-ink-faint-2: #717b8d;
 
   --font-sans: var(--font-brand);
 }
@@ -192,6 +192,58 @@ section[id] {
   .lp-card {
     border: 1px solid var(--color-border);
     background: var(--color-surface);
+  }
+
+  /* ---------------------------------------------------------- new pieces */
+
+  .lp-tile {
+    display: grid;
+    place-items: center;
+    flex: none;
+    border-radius: 12px;
+    background: var(--color-accent-tint);
+    color: var(--color-accent);
+  }
+
+  .lp-check {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .lp-note {
+    font-family: var(--font-hand), "Segoe Print", cursive;
+    font-size: 25px;
+    line-height: 1.12;
+    font-weight: 600;
+    color: var(--color-accent);
+    transform: rotate(-7deg);
+    white-space: pre-line;
+  }
+
+  .lp-hero-scrim {
+    background: linear-gradient(
+      98deg,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(255, 255, 255, 0.92) 36%,
+      rgba(255, 255, 255, 0.55) 56%,
+      rgba(255, 255, 255, 0.05) 78%
+    );
+  }
+  @media (max-width: 768px) {
+    .lp-hero-scrim {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.97) 0%,
+        rgba(255, 255, 255, 0.9) 55%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
+    }
   }
 
   /* ------------------------------------------------------- focus states */

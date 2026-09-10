@@ -23,8 +23,9 @@ export default function FeaturesPage() {
           id="all-features"
           eyebrow={featuresPage.all.eyebrow}
           heading={featuresPage.all.heading}
+          lede={featuresPage.all.lede}
           items={featuresPage.all.items}
-          warm
+          compact
         />
         <ClosingCta />
       </main>

@@ -41,12 +41,18 @@
 - No team block, no stats card, no offices, no testimonials.
 - Theme: slate.
 
-## Images still needed
-None. All slots filled 2026-09-09 from C:\Users\Devin\Pictures\rclick.io (AI-generated mockups, resized with sharp).
+## Images still needed (v2 redesign, 2026-09-09)
+Mockup-style redesign is live. These slots currently reuse the old hero photo or a screenshot as a stand-in. Generate and drop in with these exact filenames:
 
-- Hero photo: public/img/hero.png 1600x1000
-- Screens: public/img/shot-one..four.png 1180x760 (Session, Diagnostics, Security, Report)
-- Icons: app/icon.png 64x64, app/apple-icon.png 180x180
-- Logo: public/img/logo.png 128x128, used by LogoMark in components/Icons.tsx
+| Slot | File | Size | Prompt notes |
+|---|---|---|---|
+| Home hero | public/img/hero.png | 1600x1000 | Laptop on a desk showing the rclick.io Session screen; left half quiet. Then set hero.window = null in content/site.ts |
+| Features hero | public/img/hero-features.png | 1600x1000 | Same style, laptop showing Diagnostics |
+| Pricing hero | public/img/hero-pricing.png | 1600x1000 | Same style, laptop showing Sessions list |
+| About hero | public/img/hero-about.png | 1600x1000 | Monitor showing the checklist, poster on wall |
+| Contact hero | public/img/hero-contact.png | 1600x1000 | Laptop closed, mug, poster; no UI needed |
+| Benefits photo | public/img/benefits.png | 1180x760 | Office chair and desk, print on chair back |
+| About story | public/img/about-story.png | 1180x760 | Monitor with a floating checklist card |
+| About philosophy | public/img/about-philosophy.png | 1180x760 | Chair with printed slogan, desk behind |
 
-Replace the four screens with real captures once the app exists. The homepage note says they are mockups.
+Icons, logo and the four app screenshots are done.

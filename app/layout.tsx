@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { brandFont } from '@/lib/fonts'
+import { brandFont, handFont } from '@/lib/fonts'
 import { brand, hero } from '@/content/site'
 import './globals.css'
 
@@ -48,7 +48,7 @@ const JSON_LD = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={brandFont.variable}>
+    <html lang="en" className={`${brandFont.variable} ${handFont.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"
