@@ -27,7 +27,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[600px] items-center overflow-hidden border-b border-border-section max-[768px]:min-h-0"
+      className="relative flex min-h-[640px] items-center overflow-hidden border-b border-border-section max-[768px]:min-h-0"
     >
       <Image
         src={hero.image.src}
@@ -36,11 +36,11 @@ export function Hero() {
         preload
         fetchPriority="high"
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-[center_58%]"
       />
       <div aria-hidden="true" className="lp-hero-scrim pointer-events-none absolute inset-0" />
 
-      <div className="lp-rail relative grid w-full grid-cols-[0.9fr_1.1fr] items-center gap-16 px-8 pt-[72px] pb-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12 max-[768px]:px-5 max-[768px]:pt-14 max-[768px]:pb-14">
+      <div className={'lp-rail relative grid w-full items-center gap-16 ' + (hero.window ? 'grid-cols-[0.9fr_1.1fr]' : 'grid-cols-1') + '  px-8 pt-[72px] pb-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12 max-[768px]:px-5 max-[768px]:pt-14 max-[768px]:pb-14'}>
         <div className="max-w-[560px]">
           {hero.eyebrow && <div className="lp-eyebrow">{hero.eyebrow}</div>}
           <h1 className="mt-[14px] text-[clamp(44px,4.6vw,66px)] leading-[1.0] font-bold tracking-[-0.034em] text-ink text-pretty">

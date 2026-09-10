@@ -13,8 +13,8 @@ export function PageHero({ hero }: { hero: PageHeroContent }) {
   const image = hero.image ?? homeHero.image
   const visual = hero.window ? 'window' : hero.photo ? 'photo' : 'none'
   return (
-    <section className="relative flex min-h-[560px] items-center overflow-hidden border-b border-border-section max-[768px]:min-h-0">
-      <Image src={image.src} alt={image.alt} fill preload fetchPriority="high" sizes="100vw" className="object-cover" />
+    <section className="relative flex min-h-[600px] items-center overflow-hidden border-b border-border-section max-[768px]:min-h-0">
+      <Image src={image.src} alt={image.alt} fill preload fetchPriority="high" sizes="100vw" className="object-cover object-[center_58%]" />
       <div aria-hidden="true" className="lp-hero-scrim pointer-events-none absolute inset-0" />
 
       <div

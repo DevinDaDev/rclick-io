@@ -116,12 +116,7 @@ export const hero = {
    */
   image: { src: '/img/hero.png', alt: '' },
   /** The product window floated over the photo. Set to null once the photo shows the app. */
-  window: {
-    src: '/img/shot-one.png',
-    alt: 'The rclick.io session screen showing a connected PC and a running diagnostic.',
-    width: 1180,
-    height: 760,
-  } as null | { src: string; alt: string; width: number; height: number },
+  window: null as null | { src: string; alt: string; width: number; height: number },
   /** Four short trust points. Icons must exist in components/Icons.tsx. */
   trust: [
     { icon: 'bolt', label: 'Remote to any PC' },
