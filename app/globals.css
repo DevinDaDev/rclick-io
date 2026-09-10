@@ -17,7 +17,7 @@
 @theme {
   /* Surfaces */
   --color-surface: #ffffff;
-  --color-surface-warm: #f5f7fb;
+  --color-surface-warm: #f3f7fb;
   --color-surface-inset: #f9fafc;
   --color-surface-hover: #f9fafd;
 
@@ -90,18 +90,18 @@ section[id] {
   /* ---------------------------------------------------------------- shell */
 
   .lp-rail {
-    max-width: 1180px;
+    max-width: 1220px;
     margin: 0 auto;
   }
 
   .lp-section {
-    padding: 96px 32px;
+    padding: 80px 32px;
   }
 
   /* ------------------------------------------------------------ headings */
 
   .lp-eyebrow {
-    font-size: 12.5px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.09em;
     text-transform: uppercase;
@@ -109,17 +109,17 @@ section[id] {
   }
 
   .lp-h2 {
-    font-size: 38px;
-    line-height: 1.14;
-    font-weight: 600;
-    letter-spacing: -0.028em;
+    font-size: 42px;
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.03em;
     margin-top: 14px;
     text-wrap: pretty;
   }
 
   .lp-lede {
-    font-size: 17px;
-    line-height: 1.55;
+    font-size: 18px;
+    line-height: 1.6;
     color: var(--color-ink-muted);
     margin-top: 16px;
     text-wrap: pretty;
@@ -145,7 +145,8 @@ section[id] {
 
   .lp-btn-primary {
     padding: 15px 26px;
-    border-radius: 9px;
+    min-height: 48px;
+    border-radius: 10px;
     background: var(--color-accent);
     color: var(--color-surface);
     font-size: 16px;
@@ -160,7 +161,8 @@ section[id] {
   .lp-btn-secondary {
     /* 2px more horizontal padding than the primary, to compensate for the border. */
     padding: 15px 28px;
-    border-radius: 9px;
+    min-height: 48px;
+    border-radius: 10px;
     background: var(--color-surface);
     border: 1px solid var(--color-border-control);
     color: var(--color-accent);
@@ -174,11 +176,11 @@ section[id] {
   }
 
   .lp-btn-nav {
-    padding: 11px 24px;
-    border-radius: 8px;
+    padding: 12px 26px;
+    border-radius: 9px;
     background: var(--color-accent);
     color: var(--color-surface);
-    font-size: 14.5px;
+    font-size: 15px;
     box-shadow: 0 1px 2px rgba(28, 30, 26, 0.14);
   }
 
@@ -190,8 +192,24 @@ section[id] {
   /* -------------------------------------------------------------- cards */
 
   .lp-card {
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border-control);
     background: var(--color-surface);
+    box-shadow: 0 1px 2px rgba(19, 32, 56, 0.04);
+  }
+
+  /* Product window card: tinted mat, inner border, soft shadow. */
+  .lp-window {
+    border-radius: 18px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-warm);
+    padding: 12px;
+    box-shadow: 0 20px 50px rgba(20, 45, 75, 0.12);
+  }
+  .lp-window > * {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--color-window-border);
+    background: #fff;
   }
 
   /* ---------------------------------------------------------- new pieces */
@@ -209,8 +227,8 @@ section[id] {
     display: grid;
     place-items: center;
     flex: none;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     border-radius: 999px;
     background: var(--color-accent);
     color: #fff;
@@ -218,7 +236,7 @@ section[id] {
 
   .lp-note {
     font-family: var(--font-hand), "Segoe Print", cursive;
-    font-size: 25px;
+    font-size: 28px;
     line-height: 1.12;
     font-weight: 600;
     color: var(--color-accent);

@@ -49,7 +49,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[14.5px] font-medium text-ink-secondary transition-colors duration-140 hover:text-accent"
+              className="text-[15px] font-medium text-ink-secondary transition-colors duration-140 hover:text-accent"
             >
               {link.label}
             </a>

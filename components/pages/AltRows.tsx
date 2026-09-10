@@ -17,20 +17,20 @@ export function AltRows({ rows }: { rows: AltRow[] }) {
         <section
           key={row.heading}
           className={
-            'px-8 py-[80px] max-[768px]:px-5 max-[768px]:py-14 ' +
+            'px-8 py-[72px] max-[768px]:px-5 max-[768px]:py-14 ' +
             (i % 2 === 1 ? 'border-y border-border-section bg-surface-warm' : 'bg-white')
           }
         >
-          <div className="lp-rail grid grid-cols-2 items-center gap-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
+          <div className="lp-rail grid grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] items-center gap-[64px] max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
             <div className={i % 2 === 1 ? 'min-[1024px]:order-2' : ''}>
-              <div className="rounded-[18px] border border-border bg-surface-warm p-3 shadow-[0_18px_44px_rgba(19,32,56,0.10)]">
-                <div className="overflow-hidden rounded-[10px] border border-window-border bg-white">
+              <div className="lp-window">
+                <div>
                   <Image
                     src={row.image.src}
                     alt={row.image.alt}
                     width={1180}
                     height={760}
-                    sizes="(min-width: 1024px) 560px, calc(100vw - 40px)"
+                    sizes="(min-width: 1024px) 680px, calc(100vw - 40px)"
                     className="block h-auto w-full"
                   />
                 </div>
@@ -38,15 +38,15 @@ export function AltRows({ rows }: { rows: AltRow[] }) {
             </div>
             <div>
               {row.eyebrow && <div className="lp-eyebrow">{row.eyebrow}</div>}
-              <h2 className="mt-[12px] text-[34px] leading-[1.14] font-semibold tracking-[-0.028em] text-pretty max-[768px]:text-[27px]">
+              <h2 className="mt-[12px] text-[36px] leading-[1.1] font-bold tracking-[-0.03em] text-pretty max-[768px]:text-[28px]">
                 {row.heading}
               </h2>
-              <p className="mt-4 text-[16.5px] leading-[1.6] text-ink-muted text-pretty">{row.text}</p>
+              <p className="mt-4 text-[17.5px] leading-[1.6] text-ink-muted text-pretty">{row.text}</p>
               {row.bullets && (
                 <ul className="mt-6 flex flex-col gap-3">
                   {row.bullets.map((b) => (
-                    <li key={b} className="flex items-center gap-3 text-[15px] text-ink-body">
-                      <span className="grid h-[22px] w-[22px] flex-none place-items-center rounded-full bg-accent-tint text-accent">
+                    <li key={b} className="flex items-center gap-3 text-[16px] text-ink-body">
+                      <span className="grid h-[24px] w-[24px] flex-none place-items-center rounded-full bg-accent-tint text-accent">
                         <CheckGlyph size={11} strokeWidth={3} />
                       </span>
                       {b}

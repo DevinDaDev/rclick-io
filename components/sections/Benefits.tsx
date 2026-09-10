@@ -11,7 +11,7 @@ export function Benefits() {
       aria-labelledby="benefits-heading"
       className="lp-section border-y border-border-section bg-surface-warm max-[768px]:px-5 max-[768px]:py-16"
     >
-      <div className="lp-rail grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-center gap-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12">
+      <div className="lp-rail grid grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center gap-[56px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12">
         <div>
           <SectionHeader
             id="benefits-heading"
@@ -20,22 +20,22 @@ export function Benefits() {
             lede={benefits.lede}
           />
 
-          <ul className="mt-8 flex flex-col gap-[18px]">
+          <ul className="mt-9 flex flex-col gap-[20px]">
             {benefits.items.map((item) => (
               <li key={item.title} className="flex gap-[14px]">
                 <span className="lp-check mt-px">
                   <CheckGlyph size={12} strokeWidth={3.2} />
                 </span>
                 <div>
-                  <div className="text-[16px] font-semibold">{item.title}</div>
-                  <p className="mt-[3px] text-[14.5px] leading-[1.55] text-ink-muted text-pretty">{item.text}</p>
+                  <div className="text-[17px] font-semibold">{item.title}</div>
+                  <p className="mt-[3px] text-[15px] leading-[1.55] text-ink-muted text-pretty">{item.text}</p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="overflow-hidden rounded-[18px] border border-border shadow-[0_18px_44px_rgba(19,32,56,0.10)]">
+        <div className="overflow-hidden rounded-[20px] border border-border shadow-[0_20px_50px_rgba(20,45,75,0.12)]">
           <Image
             src={benefits.image.src}
             alt={benefits.image.alt}

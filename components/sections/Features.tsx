@@ -19,18 +19,18 @@ export function Features() {
           center
         />
 
-        <ul className="mt-[52px] grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-[768px]:grid-cols-1">
+        <ul className="mt-[48px] grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-[768px]:grid-cols-1">
           {features.items.map((item) => (
             <li
               key={item.title}
-              className="lp-card flex gap-[18px] rounded-[16px] px-6 py-6 transition-[border-color,box-shadow] duration-140 hover:border-accent-border hover:shadow-[0_10px_30px_rgba(19,32,56,0.06)]"
+              className="lp-card flex gap-5 rounded-[16px] p-[26px] transition-[border-color,box-shadow] duration-140 hover:border-accent-border hover:shadow-[0_12px_32px_rgba(19,32,56,0.08)]"
             >
-              <div className="lp-tile h-12 w-12">
-                <Icon name={item.icon} size={22} />
+              <div className="lp-tile h-[52px] w-[52px]">
+                <Icon name={item.icon} size={24} />
               </div>
               <div>
-                <h3 className="text-[16.5px] font-semibold tracking-[-0.012em]">{item.title}</h3>
-                <p className="mt-[8px] text-[14.5px] leading-[1.55] text-ink-muted text-pretty">{item.text}</p>
+                <h3 className="text-[18px] font-semibold tracking-[-0.014em]">{item.title}</h3>
+                <p className="mt-[8px] text-[15.5px] leading-[1.55] text-ink-muted text-pretty">{item.text}</p>
               </div>
             </li>
           ))}

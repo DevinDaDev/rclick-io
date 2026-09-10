@@ -50,7 +50,7 @@ export function Screenshots() {
               tabIndex={i === index ? 0 : -1}
               onClick={() => setIndex(i)}
               className={
-                'shrink-0 cursor-pointer rounded-full border px-[18px] py-[9px] text-[14px] select-none transition-[background-color,border-color,color] duration-140 ' +
+                'shrink-0 cursor-pointer rounded-full border px-[20px] py-[10px] text-[15px] select-none transition-[background-color,border-color,color] duration-140 ' +
                 (i === index
                   ? 'border-accent bg-accent font-semibold text-white'
                   : 'border-border-tile bg-white font-medium text-ink-secondary hover:border-accent-border hover:text-accent')
@@ -81,13 +81,13 @@ export function Screenshots() {
         </div>
       </div>
 
-      <div className="mt-[22px] grid grid-cols-[minmax(0,7fr)_minmax(0,4fr)] items-center gap-12 max-[1200px]:gap-8 max-[1024px]:grid-cols-1">
-        <div className="rounded-[18px] border border-border bg-surface-warm p-3 shadow-[0_18px_44px_rgba(19,32,56,0.08)] max-[768px]:p-2">
+      <div className="mt-[26px] grid grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)] items-center gap-12 max-[1200px]:gap-8 max-[1024px]:grid-cols-1">
+        <div className="lp-window max-[768px]:p-2">
           <div
             id="shot-panel"
             role="tabpanel"
             aria-labelledby={`shot-tab-${current.key}`}
-            className="relative aspect-[1180/760] overflow-hidden rounded-[10px] border border-window-border bg-white"
+            className="relative aspect-[1180/760]"
           >
             {screenshots.shots.map((shot, i) => (
               <Image
@@ -108,15 +108,15 @@ export function Screenshots() {
         </div>
 
         <div>
-          <div aria-live="polite" className="text-[28px] font-semibold tracking-[-0.024em]">
+          <div aria-live="polite" className="text-[32px] font-bold tracking-[-0.026em]">
             {current.title}
           </div>
-          <p className="mt-[10px] text-[16px] leading-[1.6] text-ink-muted text-pretty">{current.body}</p>
+          <p className="mt-[12px] text-[17px] leading-[1.6] text-ink-muted text-pretty">{current.body}</p>
 
           {current.bullets && (
             <ul className="mt-6 flex flex-col gap-[14px]">
               {current.bullets.map((b) => (
-                <li key={b} className="flex items-center gap-[12px] text-[15px] text-ink-body">
+                <li key={b} className="flex items-center gap-[12px] text-[16px] text-ink-body">
                   <span className="lp-check">
                     <CheckGlyph size={12} strokeWidth={3.2} />
                   </span>

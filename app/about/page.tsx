@@ -25,16 +25,16 @@ export default function AboutPage() {
 
         {/* story: text left, image right */}
         <section aria-labelledby="story-heading" className="lp-section bg-white max-[768px]:px-5 max-[768px]:py-16">
-          <div className="lp-rail grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-center gap-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
+          <div className="lp-rail grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-center gap-[56px] max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
             <div>
               <SectionHeader id="story-heading" eyebrow={story.eyebrow} heading={story.heading} />
-              <div className="mt-6 flex flex-col gap-4 text-[16.5px] leading-[1.65] text-ink-muted text-pretty">
+              <div className="mt-6 flex flex-col gap-4 text-[17.5px] leading-[1.65] text-ink-muted text-pretty">
                 {story.paragraphs.map((p) => (
                   <p key={p}>{p}</p>
                 ))}
               </div>
             </div>
-            <div className="overflow-hidden rounded-[18px] border border-border shadow-[0_18px_44px_rgba(19,32,56,0.10)]">
+            <div className="overflow-hidden rounded-[20px] border border-border shadow-[0_20px_50px_rgba(20,45,75,0.12)]">
               <Image
                 src={story.image.src}
                 alt={story.image.alt}
@@ -51,8 +51,8 @@ export default function AboutPage() {
 
         {/* philosophy: image left, checklist right */}
         <section aria-labelledby="philosophy-heading" className="lp-section border-t border-border-section bg-white max-[768px]:px-5 max-[768px]:py-16">
-          <div className="lp-rail grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-center gap-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
-            <div className="overflow-hidden rounded-[18px] border border-border shadow-[0_18px_44px_rgba(19,32,56,0.10)] max-[1024px]:order-2">
+          <div className="lp-rail grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-center gap-[56px] max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
+            <div className="overflow-hidden rounded-[20px] border border-border shadow-[0_20px_50px_rgba(20,45,75,0.12)] max-[1024px]:order-2">
               <Image
                 src={philosophy.image.src}
                 alt={philosophy.image.alt}
@@ -64,9 +64,9 @@ export default function AboutPage() {
             </div>
             <div>
               <SectionHeader id="philosophy-heading" eyebrow={philosophy.eyebrow} heading={philosophy.heading} lede={philosophy.text} />
-              <ul className="mt-7 flex flex-col gap-[14px]">
+              <ul className="mt-7 flex flex-col gap-[16px]">
                 {philosophy.bullets.map((b) => (
-                  <li key={b} className="flex items-center gap-3 text-[15.5px] font-medium text-ink-body">
+                  <li key={b} className="flex items-center gap-3 text-[16.5px] font-medium text-ink-body">
                     <span className="lp-check">
                       <CheckGlyph size={12} strokeWidth={3.2} />
                     </span>

@@ -6,13 +6,13 @@ import { actionNote, hero, primaryAction } from '@/content/site'
 /** Trust row under the hero buttons: tinted icon circle plus a two-line label. */
 export function TrustRow({ items }: { items: Trust[] }) {
   return (
-    <ul className="mt-[44px] flex flex-wrap gap-[30px] max-[768px]:grid max-[768px]:grid-cols-2 max-[768px]:gap-5">
+    <ul className="mt-[40px] flex flex-nowrap gap-[22px] max-[768px]:grid max-[768px]:grid-cols-2 max-[768px]:gap-5">
       {items.map((item) => (
-        <li key={item.label} className="w-[92px] text-center max-[768px]:w-auto">
-          <div className="mx-auto grid h-[48px] w-[48px] place-items-center rounded-full bg-accent-tint text-accent">
-            <Icon name={item.icon} size={21} />
+        <li key={item.label} className="w-[96px] shrink-0 text-center max-[768px]:w-auto">
+          <div className="mx-auto grid h-[56px] w-[56px] place-items-center rounded-full bg-accent-tint text-accent">
+            <Icon name={item.icon} size={24} />
           </div>
-          <div className="mt-[10px] text-[12.5px] leading-[1.35] font-medium text-ink-body">{item.label}</div>
+          <div className="mt-[10px] text-[13.5px] leading-[1.35] font-medium text-ink-body">{item.label}</div>
         </li>
       ))}
     </ul>
@@ -27,7 +27,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[680px] items-center overflow-hidden border-b border-border-section max-[768px]:min-h-0"
+      className="relative flex min-h-[600px] items-center overflow-hidden border-b border-border-section max-[768px]:min-h-0"
     >
       <Image
         src={hero.image.src}
@@ -40,16 +40,16 @@ export function Hero() {
       />
       <div aria-hidden="true" className="lp-hero-scrim pointer-events-none absolute inset-0" />
 
-      <div className="lp-rail relative flex w-full flex-wrap items-center justify-between gap-14 px-8 pt-[84px] pb-[84px] max-[768px]:px-5 max-[768px]:pt-14 max-[768px]:pb-14">
-        <div className="min-w-[340px] max-w-[520px] flex-[1_1_440px] max-[768px]:min-w-0">
+      <div className="lp-rail relative grid w-full grid-cols-[0.9fr_1.1fr] items-center gap-16 px-8 pt-[72px] pb-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12 max-[768px]:px-5 max-[768px]:pt-14 max-[768px]:pb-14">
+        <div className="max-w-[560px]">
           {hero.eyebrow && <div className="lp-eyebrow">{hero.eyebrow}</div>}
-          <h1 className="mt-[14px] text-[56px] leading-[1.05] font-bold tracking-[-0.032em] text-ink text-pretty max-[768px]:text-[38px]">
+          <h1 className="mt-[14px] text-[clamp(44px,4.6vw,66px)] leading-[1.0] font-bold tracking-[-0.034em] text-ink text-pretty">
             {hero.headlineA}
             <br />
             {hero.headlineB}
           </h1>
 
-          <p className="mt-[22px] max-w-[460px] text-[18px] leading-[1.55] text-ink-body text-pretty">
+          <p className="mt-[24px] max-w-[500px] text-[19px] leading-[1.55] text-ink-body text-pretty">
             {hero.sub}
           </p>
 
@@ -76,14 +76,14 @@ export function Hero() {
         </div>
 
         {hero.window && (
-          <div className="min-w-[400px] max-w-[560px] flex-[1_1_500px] overflow-hidden rounded-[12px] border border-window-border bg-white shadow-[0_30px_70px_rgba(19,32,56,0.22),0_3px_8px_rgba(19,32,56,0.08)] max-[768px]:w-full max-[768px]:min-w-0 max-[768px]:max-w-none">
+          <div className="w-full overflow-hidden rounded-[14px] border border-window-border bg-white shadow-[0_34px_80px_rgba(19,32,56,0.24),0_3px_8px_rgba(19,32,56,0.08)]">
             <Image
               src={hero.window.src}
               alt={hero.window.alt}
               width={hero.window.width}
               height={hero.window.height}
               loading="eager"
-              sizes="(min-width: 600px) 560px, calc(100vw - 40px)"
+              sizes="(min-width: 1024px) 660px, calc(100vw - 40px)"
               className="block h-auto w-full"
             />
           </div>

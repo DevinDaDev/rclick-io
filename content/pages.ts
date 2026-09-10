@@ -19,6 +19,10 @@ export type PageHero = {
   image?: { src: string; alt: string }
   /** Up to four short trust points under the buttons. */
   trust?: Trust[]
+  /** App screen shown in a window card on the right. 1180x760. */
+  window?: { src: string; alt: string }
+  /** Framed photo on the right, used when there is no app screen to show. 1180x760. */
+  photo?: { src: string; alt: string }
 }
 
 /** Shared closing band on every inner page. */
@@ -42,6 +46,7 @@ export const featuresPage = {
     lede: 'It connects, runs checks, finds problems, and gives you a clear report. Here is each step in detail.',
     cta: { label: primaryAction.label, href: primaryAction.href },
     image: { src: '/img/hero-features.png', alt: '' },
+    window: { src: '/img/shot-one.png', alt: 'The rclick.io session screen.' },
     trust: [
       { icon: 'bolt', label: 'Fast to start' },
       { icon: 'shield', label: 'Safe and secure' },
@@ -115,6 +120,7 @@ export const pricingPage = {
     cta: { label: primaryAction.label, href: primaryAction.href },
     secondary: { label: 'See how it works', href: '/features' },
     image: { src: '/img/hero-pricing.png', alt: '' },
+    window: { src: '/img/shot-two.png', alt: 'The rclick.io diagnostics screen.' },
     trust: [
       { icon: 'bolt', label: 'Set up in minutes' },
       { icon: 'users', label: 'No credit card required' },
@@ -185,6 +191,7 @@ export const aboutPage = {
     cta: { label: primaryAction.label, href: primaryAction.href },
     secondary: { label: 'See how it works', href: '/features' },
     image: { src: '/img/hero-about.png', alt: '' },
+    window: { src: '/img/shot-four.png', alt: 'The rclick.io session report.' },
     trust: [
       { icon: 'clock', label: 'Save time on tickets' },
       { icon: 'message', label: 'Keep the client in the loop' },
@@ -238,6 +245,7 @@ export const contactPage = {
     heading: 'Get in touch.',
     lede: 'Email is fastest. The form goes to the same inbox. We reply within a working day.',
     image: { src: '/img/hero-contact.png', alt: '' },
+    photo: { src: '/img/contact-photo.png', alt: 'A desk with a laptop, a mug and a plant.' },
     trust: [
       { icon: 'bolt', label: 'Fast replies' },
       { icon: 'users', label: 'Real humans' },

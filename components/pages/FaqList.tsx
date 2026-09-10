@@ -33,7 +33,7 @@ export function FaqList({
             </div>
           )}
         </div>
-        <div className="mt-10">
+        <div className="mt-9">
           <FaqCards items={items} />
         </div>
       </div>
