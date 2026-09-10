@@ -36,7 +36,7 @@ export function Hero() {
         preload
         fetchPriority="high"
         sizes="100vw"
-        className="object-cover object-[center_58%]"
+        className="object-cover object-[center_58%] max-[768px]:object-[72%_center]"
       />
       <div aria-hidden="true" className="lp-hero-scrim pointer-events-none absolute inset-0" />
 

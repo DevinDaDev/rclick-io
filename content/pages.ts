@@ -43,7 +43,7 @@ export const featuresPage = {
   hero: {
     eyebrow: 'Features',
     heading: 'What rclick.io does during a session.',
-    lede: 'It connects, runs checks, finds problems, and gives you a clear report. Here is each step in detail.',
+    lede: 'It connects to a Windows PC, runs checks, finds problems, and gives you a clear report. Here is each step in detail.',
     cta: { label: primaryAction.label, href: primaryAction.href },
     image: { src: '/img/hero-features.png', alt: '' },
     trust: [
@@ -98,7 +98,7 @@ export const featuresPage = {
       { icon: 'file', title: 'Event log scan', text: 'Pulls recent errors and explains them.' },
       { icon: 'loop', title: 'Network checks', text: 'Connection, DNS, and adapter status.' },
       { icon: 'shield', title: 'Patch status', text: 'Lists missing Windows updates.' },
-      { icon: 'monitor', title: 'Remote session', text: 'Connect to a Windows PC from your own machine.' },
+      { icon: 'monitor', title: 'Remote to Windows PCs', text: 'Connect to a Windows 10 or 11 PC from your own machine.' },
       { icon: 'download', title: 'Report export', text: 'Save or send the session summary.' },
       { icon: 'target', title: 'Security sweep', text: 'Startup items, local settings, known bad software.' },
       { icon: 'calendar', title: 'Session history', text: 'Every past session and its report, per PC.' },

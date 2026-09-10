@@ -42,6 +42,7 @@ export function Benefits() {
             width={1180}
             height={760}
             sizes="(min-width: 1024px) 560px, calc(100vw - 40px)"
+            loading="lazy"
             className="block h-auto w-full"
           />
         </div>

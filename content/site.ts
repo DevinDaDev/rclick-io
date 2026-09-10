@@ -119,7 +119,7 @@ export const hero = {
   window: null as null | { src: string; alt: string; width: number; height: number },
   /** Four short trust points. Icons must exist in components/Icons.tsx. */
   trust: [
-    { icon: 'bolt', label: 'Remote to any PC' },
+    { icon: 'bolt', label: 'Remote to Windows PCs' },
     { icon: 'loop', label: 'Run the checks' },
     { icon: 'shield', label: 'Security sweep' },
     { icon: 'file', label: 'Plain-English report' },
@@ -131,10 +131,10 @@ export const hero = {
 export const features = {
   eyebrow: 'Features',
   heading: 'Everything you need for a smoother session.',
-  lede: 'rclick.io connects, checks, reports. Nothing is listed that the current build does not do.',
+  lede: 'Built around the checks IT technicians run every day. It connects, checks, and reports.',
   /** Six reads best. Three or nine also fill the grid. */
   items: [
-    { icon: 'monitor', title: 'Remote to any user PC', text: "Start a session from your own machine and connect to the user's Windows PC in seconds." },
+    { icon: 'monitor', title: 'Remote to Windows PCs', text: "Start a session from your own machine and connect to the user's Windows 10 or 11 PC in seconds." },
     { icon: 'settings', title: 'Automated diagnostics', text: 'Runs the standard checks on disk, memory, startup, drivers, network and more.' },
     { icon: 'shield', title: 'Security sweep', text: 'Finds missing patches, unknown startup items, weak local settings, and known bad software.' },
     { icon: 'pencil', title: 'Ask it in plain English', text: 'Type what the user told you. The assistant picks the checks and explains what it found.' },
@@ -152,7 +152,7 @@ export const benefits = {
   items: [
     { title: 'More time talking, less time clicking', text: 'The assistant runs the checks while you find out what the client actually needs.' },
     { title: 'Same checklist every time', text: 'Nothing gets skipped because it was late on a Friday.' },
-    { title: 'Faster tickets', text: 'The routine part is handled while you work the hard part.' },
+    { title: 'Faster tickets', text: 'The routine part is handled while you handle the problem that actually needs you.' },
     { title: 'Something to show for it', text: 'The client gets a written report. You get a record for the next visit.' },
   ] as Item[],
   /** Photo on the right. 1180x760. Quiet, on-brand, no UI in it. */

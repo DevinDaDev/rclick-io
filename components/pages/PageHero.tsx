@@ -14,7 +14,7 @@ export function PageHero({ hero }: { hero: PageHeroContent }) {
   const visual = hero.window ? 'window' : hero.photo ? 'photo' : 'none'
   return (
     <section className="relative flex min-h-[600px] items-center overflow-hidden border-b border-border-section max-[768px]:min-h-0">
-      <Image src={image.src} alt={image.alt} fill preload fetchPriority="high" sizes="100vw" className="object-cover object-[center_58%]" />
+      <Image src={image.src} alt={image.alt} fill preload fetchPriority="high" sizes="100vw" className="object-cover object-[center_58%] max-[768px]:object-[72%_center]" />
       <div aria-hidden="true" className="lp-hero-scrim pointer-events-none absolute inset-0" />
 
       <div
