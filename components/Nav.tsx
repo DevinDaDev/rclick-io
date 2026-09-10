@@ -34,32 +34,27 @@ export function Nav() {
   return (
     <nav
       aria-label="Main"
-      className="sticky top-0 z-40 border-b border-border-section bg-white/[0.88] backdrop-blur-[14px]"
+      className="absolute inset-x-0 top-0 z-40 bg-transparent"
     >
-      <div className="mx-auto flex h-[74px] w-full max-w-[1284px] items-center gap-[38px] px-8 max-[768px]:px-5">
+      <div className="mx-auto grid h-[78px] w-full max-w-[1284px] grid-cols-[1fr_auto_1fr] items-center gap-[38px] px-8 max-[1024px]:grid-cols-[1fr_auto] max-[768px]:px-5">
         <a href="/" className="flex items-center gap-[10px] text-ink">
           <LogoMark size={30} />
           <span className="text-[21px] font-semibold tracking-[-0.02em]">{brand.name}</span>
         </a>
 
-        <div className="flex-1" />
-
-        <div className="flex items-center gap-[34px] max-[1024px]:hidden">
+        <div className="flex items-center justify-center gap-[36px] max-[1024px]:hidden">
           {nav.links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[16px] font-medium text-ink-secondary transition-colors duration-140 hover:text-accent"
+              className="text-[16px] font-medium text-ink transition-colors duration-140 hover:text-accent"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <a href={nav.ctaHref} className="lp-btn lp-btn-nav">
-            {nav.cta}
-          </a>
+        <div className="flex items-center justify-end gap-3">
 
           <button
             type="button"
@@ -67,7 +62,7 @@ export function Nav() {
             aria-expanded={open}
             aria-controls="nav-menu"
             aria-label={open ? 'Close menu' : 'Open menu'}
-            className="hidden h-[38px] w-[38px] place-items-center rounded-lg border border-border-tile bg-white text-ink-secondary transition-colors duration-140 hover:text-accent max-[1024px]:grid"
+            className="hidden h-[42px] w-[42px] place-items-center rounded-lg border border-border-tile bg-white/90 text-ink-secondary transition-colors duration-140 hover:text-accent max-[1024px]:grid"
           >
             <svg
               width="18"
@@ -99,7 +94,7 @@ export function Nav() {
       {open && (
         <div
           id="nav-menu"
-          className="border-t border-border-section bg-white min-[1024px]:hidden"
+          className="border-y border-border-section bg-white min-[1024px]:hidden"
         >
           <div className="lp-rail flex flex-col px-8 py-2 max-[768px]:px-5">
             {nav.links.map((link) => (
@@ -112,6 +107,9 @@ export function Nav() {
                 {link.label}
               </a>
             ))}
+            <a href={nav.ctaHref} onClick={() => setOpen(false)} className="lp-btn lp-btn-nav my-3 w-fit">
+              {nav.cta}
+            </a>
           </div>
         </div>
       )}

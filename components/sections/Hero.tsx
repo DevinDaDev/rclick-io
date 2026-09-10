@@ -40,7 +40,7 @@ export function Hero() {
       />
       <div aria-hidden="true" className="lp-hero-scrim pointer-events-none absolute inset-0" />
 
-      <div className={'lp-rail relative grid w-full items-center gap-16 ' + (hero.window ? 'grid-cols-[0.9fr_1.1fr]' : 'grid-cols-1') + '  px-8 pt-[72px] pb-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12 max-[768px]:px-5 max-[768px]:pt-14 max-[768px]:pb-14'}>
+      <div className={'lp-rail relative grid w-full items-center gap-16 ' + (hero.window ? 'grid-cols-[0.9fr_1.1fr]' : 'grid-cols-1') + '  px-8 pt-[140px] pb-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12 max-[768px]:px-5 max-[768px]:pt-[110px] max-[768px]:pb-14'}>
         <div className="max-w-[600px]">
           {hero.eyebrow && <div className="lp-eyebrow">{hero.eyebrow}</div>}
           <h1 className="mt-[14px] text-[clamp(46px,4.9vw,72px)] leading-[1.0] font-bold tracking-[-0.034em] text-ink text-pretty">

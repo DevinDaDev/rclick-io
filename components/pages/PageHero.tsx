@@ -19,7 +19,7 @@ export function PageHero({ hero }: { hero: PageHeroContent }) {
 
       <div
         className={
-          'lp-rail relative grid w-full items-center gap-16 px-8 pt-[64px] pb-[64px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12 max-[768px]:px-5 max-[768px]:pt-14 max-[768px]:pb-12 ' +
+          'lp-rail relative grid w-full items-center gap-16 px-8 pt-[130px] pb-[64px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12 max-[768px]:px-5 max-[768px]:pt-[110px] max-[768px]:pb-12 ' +
           (visual === 'none' ? 'grid-cols-1' : 'grid-cols-[0.9fr_1.1fr]')
         }
       >
