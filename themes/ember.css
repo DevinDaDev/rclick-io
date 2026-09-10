@@ -1,0 +1,16 @@
+/* Theme preset: ember. Only the accent family changes between presets; surfaces, borders
+   and ink are shared so every preset stays WCAG AA on both surfaces. */
+@theme {
+  --color-accent: #a8441f;
+  --color-accent-hover: #8e3818;
+  --color-accent-deep: #732d13;
+  --color-accent-icon: #b85a34;
+  --color-accent-bar: #d9703f;
+  --color-accent-tint: #fbf4f0;
+  --color-accent-tint-alt: #f7ede7;
+  --color-accent-border: #ecd9cf;
+  --color-cta-body: #5e3d2f;
+  --color-cta-meta: #6f4c3d;
+  --shadow-accent: 0 6px 18px rgba(168,68,31, 0.26);
+  --shadow-accent-soft: 0 6px 18px rgba(168,68,31, 0.24);
+}

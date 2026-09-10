@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+/*
+  Software one-page template.
+
+  Business utility, not consumer SaaS: two surfaces (white and a warm off-white), one
+  accent hue from themes/, borders instead of shadows, no gradients on content sections.
+  The single blurred surface is the sticky nav.
+
+  No third-party requests. The font is self-hosted by next/font, there is no analytics
+  and there are no cookies. Keep it that way unless the client asks and the FAQ says so.
+*/
+
+@import "../themes/active.css";
+
+/* Shared tokens. Presets in themes/ only override the accent family. */
+@theme {
+  /* Surfaces */
+  --color-surface: #ffffff;
+  --color-surface-warm: #fbfaf7;
+  --color-surface-inset: #fcfcfa;
+  --color-surface-hover: #fcfdfc;
+
+  /* Borders - four distinct greys, one or two characters apart. Do not merge them. */
+  --color-border: #eceae3;
+  --color-border-section: #ecebe4;
+  --color-border-control: #e2e0d8;
+  --color-border-tile: #e6e4dc;
+  --color-border-subtle: #f0eee7;
+  --color-border-faint: #f4f2ec;
+  --color-window-border: #dcdbd4;
+
+  /* Text. The four quiet greys all clear 4.5:1 on the warm surface. */
+  --color-ink: #191a17;
+  --color-ink-body: #3d3e38;
+  --color-ink-secondary: #4b4c46;
+  --color-ink-muted: #5d5e57;
+  --color-ink-meta: #676760;
+  --color-ink-meta-2: #6c6d66;
+  --color-ink-faint: #71716a;
+  --color-ink-faint-2: #72736a;
+
+  --font-sans: var(--font-brand);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-surface);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-sans), "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent-border);
+}
+
+/* The sticky bar is 68px, so an anchored heading needs to clear it. */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  /* ---------------------------------------------------------------- shell */
+
+  .lp-rail {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .lp-section {
+    padding: 96px 32px;
+  }
+
+  /* ------------------------------------------------------------ headings */
+
+  .lp-eyebrow {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .lp-h2 {
+    font-size: 38px;
+    line-height: 1.14;
+    font-weight: 600;
+    letter-spacing: -0.028em;
+    margin-top: 14px;
+    text-wrap: pretty;
+  }
+
+  .lp-lede {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--color-ink-muted);
+    margin-top: 16px;
+    text-wrap: pretty;
+  }
+
+  /* ------------------------------------------------------------- buttons */
+
+  .lp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    font-weight: 600;
+    /* The mock leaves buttons at line-height normal. Tailwind's preflight sets 1.5 on
+       html, which every control inherits, and that alone made the nav Download 39.5px
+       instead of 35px and the hero primary 49.4px instead of 45px. */
+    line-height: normal;
+    transition:
+      background-color 140ms ease,
+      border-color 140ms ease,
+      color 140ms ease;
+  }
+
+  .lp-btn-primary {
+    padding: 15px 26px;
+    border-radius: 9px;
+    background: var(--color-accent);
+    color: var(--color-surface);
+    font-size: 16px;
+    box-shadow: var(--shadow-accent);
+  }
+
+  .lp-btn-primary:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-surface);
+  }
+
+  .lp-btn-secondary {
+    /* 2px more horizontal padding than the primary, to compensate for the border. */
+    padding: 15px 28px;
+    border-radius: 9px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-control);
+    color: var(--color-accent);
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(28, 30, 26, 0.08);
+  }
+
+  .lp-btn-secondary:hover {
+    background: var(--color-accent-tint);
+    color: var(--color-accent);
+  }
+
+  .lp-btn-nav {
+    padding: 11px 24px;
+    border-radius: 8px;
+    background: var(--color-accent);
+    color: var(--color-surface);
+    font-size: 14.5px;
+    box-shadow: 0 1px 2px rgba(28, 30, 26, 0.14);
+  }
+
+  .lp-btn-nav:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-surface);
+  }
+
+  /* -------------------------------------------------------------- cards */
+
+  .lp-card {
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  /* ------------------------------------------------------- focus states */
+
+  /*
+    One ring, everywhere something can be focused. The handoff calls shipping without
+    keyboard focus states a blocker.
+
+    Deliberate deviation from the handoff, on two counts, both measured:
+
+    1. The handoff's ring is box-shadow 0 0 0 3px rgba(47,107,63,0.28). That composites
+       to 1.52 : 1 against white. WCAG 2.2 (1.4.11) asks 3 : 1 of a focus indicator, so
+       as authored the ring is close to invisible even where it does paint. Solid
+       #2f6b3f is 6.37 : 1 on all three surfaces this page uses.
+    2. A box-shadow ring loses the cascade. Tailwind emits every shadow-[...] utility
+       into the utilities layer, which comes after this components layer, so the four
+       controls carrying a decorative shadow utility - the hero Download CTA, the
+       emphasised plan button and both slideshow arrows - painted the shadow over the
+       ring and showed no focus state whatsoever. outline sits outside that fight, and
+       it follows the element's own border-radius, so nothing has to restate a radius.
+
+    summary is in the selector list because the FAQ rows are the one control that is
+    neither a, button, nor [tabindex].
+
+    To restore the handoff exactly, put its box-shadow back - and accept both costs.
+  */
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}

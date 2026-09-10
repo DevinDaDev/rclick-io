@@ -1,0 +1,16 @@
+/* Theme preset: forest. Only the accent family changes between presets; surfaces, borders
+   and ink are shared so every preset stays WCAG AA on both surfaces. */
+@theme {
+  --color-accent: #2f6b3f;
+  --color-accent-hover: #265834;
+  --color-accent-deep: #234f2f;
+  --color-accent-icon: #3f7d4f;
+  --color-accent-bar: #3f9d5c;
+  --color-accent-tint: #f3f8f4;
+  --color-accent-tint-alt: #eef4ef;
+  --color-accent-border: #dbe8dd;
+  --color-cta-body: #3d5741;
+  --color-cta-meta: #4f6a56;
+  --shadow-accent: 0 6px 18px rgba(47,107,63, 0.26);
+  --shadow-accent-soft: 0 6px 18px rgba(47,107,63, 0.24);
+}

@@ -1,0 +1,16 @@
+/* Theme preset: slate. Only the accent family changes between presets; surfaces, borders
+   and ink are shared so every preset stays WCAG AA on both surfaces. */
+@theme {
+  --color-accent: #2f4a6b;
+  --color-accent-hover: #263c58;
+  --color-accent-deep: #1f324a;
+  --color-accent-icon: #3f5f7d;
+  --color-accent-bar: #4a7fb0;
+  --color-accent-tint: #f3f6f9;
+  --color-accent-tint-alt: #eef2f6;
+  --color-accent-border: #dbe3ec;
+  --color-cta-body: #3d4d5e;
+  --color-cta-meta: #4f6072;
+  --shadow-accent: 0 6px 18px rgba(47,74,107, 0.26);
+  --shadow-accent-soft: 0 6px 18px rgba(47,74,107, 0.24);
+}

@@ -1,0 +1,16 @@
+/* Theme preset: plum. Only the accent family changes between presets; surfaces, borders
+   and ink are shared so every preset stays WCAG AA on both surfaces. */
+@theme {
+  --color-accent: #5c3a73;
+  --color-accent-hover: #4c2f5f;
+  --color-accent-deep: #3e264d;
+  --color-accent-icon: #6f4b87;
+  --color-accent-bar: #8a5fa8;
+  --color-accent-tint: #f7f3f9;
+  --color-accent-tint-alt: #f2edf5;
+  --color-accent-border: #e5dbec;
+  --color-cta-body: #4d3d57;
+  --color-cta-meta: #5e4d69;
+  --shadow-accent: 0 6px 18px rgba(92,58,115, 0.26);
+  --shadow-accent-soft: 0 6px 18px rgba(92,58,115, 0.24);
+}
