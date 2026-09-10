@@ -51,3 +51,6 @@ next-env.d.ts
 
 # Release binaries live in public/downloads/ and are uploaded with the deploy, not git.
 /public/downloads/
+
+# visual verification screenshots
+/.verification/

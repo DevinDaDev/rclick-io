@@ -23,7 +23,7 @@ export function ClosingCta({ content = closing, className = '' }: { content?: Cl
   const c = content
   return (
     <section className={'bg-white px-8 py-[72px] max-[768px]:px-5 max-[768px]:py-14 ' + className}>
-      <div className="lp-rail relative grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-10 overflow-hidden rounded-[24px] border border-accent-border bg-accent-tint px-16 py-[52px] max-[1024px]:grid-cols-1 max-[1024px]:gap-7 max-[768px]:px-6 max-[768px]:py-9">
+      <div className="lp-rail relative grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-10 overflow-hidden rounded-[26px] border border-accent-border bg-accent-tint px-20 py-[64px] max-[1024px]:grid-cols-1 max-[1024px]:gap-7 max-[768px]:px-6 max-[768px]:py-9">
         {c.icon ? (
           <div className="grid h-[104px] w-[104px] place-items-center rounded-full bg-white text-accent shadow-[0_6px_20px_rgba(19,32,56,0.08)] max-[1024px]:hidden">
             <Icon name={c.icon} size={42} />
@@ -34,10 +34,10 @@ export function ClosingCta({ content = closing, className = '' }: { content?: Cl
 
         <div className={c.icon ? '' : 'min-[1024px]:col-span-1 min-[1024px]:text-center'}>
           {c.eyebrow && <div className="lp-eyebrow">{c.eyebrow}</div>}
-          <h2 className="mt-3 text-[38px] leading-[1.1] font-bold tracking-[-0.03em] text-ink text-pretty max-[768px]:text-[28px]">
+          <h2 className="mt-3 text-[42px] leading-[1.08] font-bold tracking-[-0.03em] text-ink text-pretty max-[768px]:text-[28px]">
             {c.heading}
           </h2>
-          <p className={'mt-3 max-w-[640px] text-[17px] leading-[1.55] text-cta-body text-pretty' + (c.icon ? '' : ' min-[1024px]:mx-auto')}>
+          <p className={'mt-4 max-w-[680px] text-[18px] leading-[1.55] text-cta-body text-pretty' + (c.icon ? '' : ' min-[1024px]:mx-auto')}>
             {c.text}
           </p>
           <div className={'mt-7 flex flex-wrap items-center gap-[14px]' + (c.icon ? '' : ' min-[1024px]:justify-center')}>

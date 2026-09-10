@@ -23,12 +23,12 @@ export function PageHero({ hero }: { hero: PageHeroContent }) {
           (visual === 'none' ? 'grid-cols-1' : 'grid-cols-[0.9fr_1.1fr]')
         }
       >
-        <div className="max-w-[580px]">
+        <div className="max-w-[620px]">
           {hero.eyebrow && <div className="lp-eyebrow">{hero.eyebrow}</div>}
-          <h1 className="mt-[14px] text-[clamp(42px,4.3vw,60px)] leading-[1.02] font-bold tracking-[-0.034em] text-ink text-pretty">
+          <h1 className="mt-[14px] text-[clamp(44px,4.7vw,68px)] leading-[1.02] font-bold tracking-[-0.034em] text-ink text-pretty">
             {hero.heading}
           </h1>
-          <p className="mt-5 max-w-[540px] text-[19px] leading-[1.55] text-ink-body text-pretty">{hero.lede}</p>
+          <p className="mt-5 max-w-[560px] text-[20px] leading-[1.55] text-ink-body text-pretty">{hero.lede}</p>
 
           {(hero.cta || hero.secondary) && (
             <div className="mt-8 flex flex-wrap items-center gap-[14px]">

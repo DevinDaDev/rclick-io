@@ -43,13 +43,13 @@ export function IconGrid({
         >
           {items.map((item) =>
             compact ? (
-              <li key={item.title} className="lp-card flex min-h-[110px] gap-4 rounded-[14px] p-[22px]">
-                <span className="lp-tile h-11 w-11 rounded-[11px]">
-                  <Icon name={item.icon} size={21} />
+              <li key={item.title} className="lp-card flex min-h-[128px] gap-[18px] rounded-[16px] p-[26px]">
+                <span className="lp-tile h-12 w-12 rounded-[12px]">
+                  <Icon name={item.icon} size={22} />
                 </span>
                 <div>
-                  <div className="text-[16px] font-semibold">{item.title}</div>
-                  <p className="mt-1 text-[14.5px] leading-[1.5] text-ink-muted">{item.text}</p>
+                  <div className="text-[17px] font-semibold">{item.title}</div>
+                  <p className="mt-[6px] text-[15px] leading-[1.55] text-ink-muted">{item.text}</p>
                 </div>
               </li>
             ) : (

@@ -17,7 +17,7 @@
 @theme {
   /* Surfaces */
   --color-surface: #ffffff;
-  --color-surface-warm: #f3f7fb;
+  --color-surface-warm: #f6f9fc;
   --color-surface-inset: #f9fafc;
   --color-surface-hover: #f9fafd;
 
@@ -71,7 +71,7 @@ body {
 
 /* The sticky bar is 68px, so an anchored heading needs to clear it. */
 section[id] {
-  scroll-margin-top: 84px;
+  scroll-margin-top: 90px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -144,8 +144,9 @@ section[id] {
   }
 
   .lp-btn-primary {
-    padding: 15px 26px;
-    min-height: 48px;
+    padding: 16px 28px;
+    min-height: 52px;
+    font-size: 16.5px;
     border-radius: 10px;
     background: var(--color-accent);
     color: var(--color-surface);
@@ -160,9 +161,10 @@ section[id] {
 
   .lp-btn-secondary {
     /* 2px more horizontal padding than the primary, to compensate for the border. */
-    padding: 15px 28px;
-    min-height: 48px;
+    padding: 16px 30px;
+    min-height: 52px;
     border-radius: 10px;
+    font-size: 16.5px;
     background: var(--color-surface);
     border: 1px solid var(--color-border-control);
     color: var(--color-accent);
@@ -176,11 +178,11 @@ section[id] {
   }
 
   .lp-btn-nav {
-    padding: 12px 26px;
-    border-radius: 9px;
+    padding: 13px 28px;
+    border-radius: 10px;
     background: var(--color-accent);
     color: var(--color-surface);
-    font-size: 15px;
+    font-size: 15.5px;
     box-shadow: 0 1px 2px rgba(28, 30, 26, 0.14);
   }
 

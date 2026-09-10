@@ -36,10 +36,10 @@ export function Nav() {
       aria-label="Main"
       className="sticky top-0 z-40 border-b border-border-section bg-white/[0.88] backdrop-blur-[14px]"
     >
-      <div className="mx-auto flex h-[68px] w-full max-w-[1244px] items-center gap-[34px] px-8 max-[768px]:px-5">
+      <div className="mx-auto flex h-[74px] w-full max-w-[1284px] items-center gap-[38px] px-8 max-[768px]:px-5">
         <a href="/" className="flex items-center gap-[10px] text-ink">
-          <LogoMark size={26} />
-          <span className="text-[19px] font-semibold tracking-[-0.02em]">{brand.name}</span>
+          <LogoMark size={30} />
+          <span className="text-[21px] font-semibold tracking-[-0.02em]">{brand.name}</span>
         </a>
 
         <div className="flex-1" />
@@ -49,7 +49,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[15px] font-medium text-ink-secondary transition-colors duration-140 hover:text-accent"
+              className="text-[16px] font-medium text-ink-secondary transition-colors duration-140 hover:text-accent"
             >
               {link.label}
             </a>

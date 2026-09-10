@@ -6,13 +6,13 @@ import { actionNote, hero, primaryAction } from '@/content/site'
 /** Trust row under the hero buttons: tinted icon circle plus a two-line label. */
 export function TrustRow({ items }: { items: Trust[] }) {
   return (
-    <ul className="mt-[40px] flex flex-nowrap gap-[22px] max-[768px]:grid max-[768px]:grid-cols-2 max-[768px]:gap-5">
+    <ul className="mt-[44px] flex flex-nowrap gap-[20px] max-[768px]:grid max-[768px]:grid-cols-2 max-[768px]:gap-5">
       {items.map((item) => (
-        <li key={item.label} className="w-[96px] shrink-0 text-center max-[768px]:w-auto">
-          <div className="mx-auto grid h-[56px] w-[56px] place-items-center rounded-full bg-accent-tint text-accent">
-            <Icon name={item.icon} size={24} />
+        <li key={item.label} className="w-[106px] shrink-0 text-center max-[768px]:w-auto">
+          <div className="mx-auto grid h-[62px] w-[62px] place-items-center rounded-full bg-accent-tint text-accent">
+            <Icon name={item.icon} size={26} />
           </div>
-          <div className="mt-[10px] text-[13.5px] leading-[1.35] font-medium text-ink-body">{item.label}</div>
+          <div className="mt-[12px] text-[14.5px] leading-[1.35] font-medium text-ink-body">{item.label}</div>
         </li>
       ))}
     </ul>
@@ -41,15 +41,15 @@ export function Hero() {
       <div aria-hidden="true" className="lp-hero-scrim pointer-events-none absolute inset-0" />
 
       <div className={'lp-rail relative grid w-full items-center gap-16 ' + (hero.window ? 'grid-cols-[0.9fr_1.1fr]' : 'grid-cols-1') + '  px-8 pt-[72px] pb-[72px] max-[1024px]:grid-cols-1 max-[1024px]:gap-12 max-[768px]:px-5 max-[768px]:pt-14 max-[768px]:pb-14'}>
-        <div className="max-w-[560px]">
+        <div className="max-w-[600px]">
           {hero.eyebrow && <div className="lp-eyebrow">{hero.eyebrow}</div>}
-          <h1 className="mt-[14px] text-[clamp(44px,4.6vw,66px)] leading-[1.0] font-bold tracking-[-0.034em] text-ink text-pretty">
+          <h1 className="mt-[14px] text-[clamp(46px,4.9vw,72px)] leading-[1.0] font-bold tracking-[-0.034em] text-ink text-pretty">
             {hero.headlineA}
             <br />
             {hero.headlineB}
           </h1>
 
-          <p className="mt-[24px] max-w-[500px] text-[19px] leading-[1.55] text-ink-body text-pretty">
+          <p className="mt-[24px] max-w-[520px] text-[20px] leading-[1.55] text-ink-body text-pretty">
             {hero.sub}
           </p>
 
