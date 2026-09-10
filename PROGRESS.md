@@ -24,9 +24,9 @@
 
 ## Ship
 - [x] Commit to main
-- [ ] GitHub repo DevinDaDev/rclick-io
-- [ ] Vercel deploy, NEXT_PUBLIC_SITE_URL set, redeploy
-- [ ] Live 200 + nav click-through
+- [x] GitHub repo DevinDaDev/rclick-io
+- [x] Vercel deploy, NEXT_PUBLIC_SITE_URL set, redeploy
+- [x] Live 200 + nav click-through
 
 ## Assumptions
 - Legal owner = "rclick.io" (no company name given).
