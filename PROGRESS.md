@@ -42,15 +42,11 @@
 - Theme: slate.
 
 ## Images still needed
-| Slot | File | Size |
-|---|---|---|
-| Hero background photo | public/img/hero.png | 1600×1000 or larger, quiet on the left third |
-| Hero product window / screenshot 1 (Session) | public/img/shot-one.png | 1180×760 |
-| Screenshot 2 (Diagnostics) | public/img/shot-two.png | 1180×760 |
-| Screenshot 3 (Security) | public/img/shot-three.png | 1180×760 |
-| Screenshot 4 (Report) | public/img/shot-four.png | 1180×760 |
-| Favicon | app/icon.png | 64×64 or larger |
-| iOS icon | app/apple-icon.png | 180×180 |
-| Logo | replace `LogoMark` in components/Icons.tsx | any, next/image |
+None. All slots filled 2026-09-09 from C:\Users\Devin\Pictures\rclick.io (AI-generated mockups, resized with sharp).
 
-All are flat grey (or slate) placeholders right now. The screenshots note on the homepage says so.
+- Hero photo: public/img/hero.png 1600x1000
+- Screens: public/img/shot-one..four.png 1180x760 (Session, Diagnostics, Security, Report)
+- Icons: app/icon.png 64x64, app/apple-icon.png 180x180
+- Logo: public/img/logo.png 128x128, used by LogoMark in components/Icons.tsx
+
+Replace the four screens with real captures once the app exists. The homepage note says they are mockups.

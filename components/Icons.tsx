@@ -1,3 +1,4 @@
+import Image from 'next/image'
 /**
  * The site's icon set: monoline, 24px viewBox, 1.7px stroke. Add a glyph here and
  * its key to IconKey in content/site.ts to use it from content.
@@ -161,29 +162,19 @@ export function Icon({ name, ...rest }: IconProps & { name: IconName }) {
  * Always paired with the brand wordmark beside it, so it is decoration.
  */
 /**
- * The brand mark. A generic rounded square with a check until the client's logo arrives.
- * To use a real logo, drop it in public/img/ and replace this body with a next/image.
+ * The brand mark. The rclick.io app icon (cursor + wrench on slate) from public/img/logo.png.
  */
 export function LogoMark({ size = 26 }: { size?: number }) {
   return (
-    <svg
+    <Image
+      src="/img/logo.png"
       width={size}
       height={size}
-      viewBox="0 0 24 24"
+      alt=""
       aria-hidden="true"
-      focusable="false"
-      className="block"
-    >
-      <rect x="2" y="2" width="20" height="20" rx="6" fill="var(--color-accent)" />
-      <path
-        d="M7.5 12.5l3 3 6-6.5"
-        fill="none"
-        stroke="#fff"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+      className="block rounded-[6px]"
+      priority
+    />
   )
 }
 

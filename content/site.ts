@@ -167,7 +167,7 @@ export const screenshots = {
     { key: 'three', title: 'Security', src: '/img/shot-three.png', body: 'Patches, startup items, and settings flagged for review, in order of risk.' },
     { key: 'four', title: 'Report', src: '/img/shot-four.png', body: 'The written summary you send to the client when the session ends.' },
   ],
-  note: 'Screens shown are placeholders until the first build is captured.',
+  note: 'Screens are design mockups of the app. The shipping build may differ.',
 }
 
 // -------------------------------------------------------------------------- cta band
